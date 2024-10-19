@@ -1,15 +1,4 @@
 //
-//  ChallengesView.swift
-//  EcoHabitTracker
-//
-//  Created by Maria Rodriguez on 10/18/24.
-//
-//
-//  ChallengesView.swift
-//  EcoHabitTracker
-//
-//  Created by Maria Rodriguez on 10/18/24.
-//
 //
 //  ChallengesView.swift
 //  EcoHabitTracker
@@ -20,6 +9,7 @@
 import SwiftUI
 
 struct ChallengesView: View {
+    @EnvironmentObject var viewModel: ChallengesViewModel
     @State private var selectedChallenge: ChallengeModel? = nil
     @State private var showModal: Bool = false
     @State private var selectedCategory: ChallengeCategory = .all
@@ -27,10 +17,9 @@ struct ChallengesView: View {
     var body: some View {
         NavigationView {
             VStack {
-                // Horizontally scrolling tab view with custom styles
+                // Category selection
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 16) {
-                        // Loop through all challenge categories
                         ForEach(ChallengeCategory.allCases, id: \.self) { category in
                             Text(category.rawValue)
                                 .padding(.vertical, 10)
@@ -46,6 +35,7 @@ struct ChallengesView: View {
                     .padding()
                 }
                 
+                // Challenges list
                 ScrollView {
                     VStack(spacing: 16) {
                         ForEach(filteredChallenges) { challenge in
@@ -55,25 +45,25 @@ struct ChallengesView: View {
                             }) {
                                 ChallengeCard(challenge: challenge)
                             }
-                            .sheet(isPresented: $showModal) {
-                                if let challenge = selectedChallenge {
-                                    ChallengeDetailView(challenge: challenge, showModal: $showModal)
-                                }
-                            }
                         }
                     }
                     .padding()
                 }
             }
             .navigationBarTitle("Fun Challenges", displayMode: .inline)
+            .sheet(item: $selectedChallenge) { challenge in
+                ChallengeDetailView(challenge: challenge) { startedChallenge in
+                    viewModel.startChallenge(startedChallenge)
+                }
+            }
         }
     }
     
     var filteredChallenges: [ChallengeModel] {
         if selectedCategory == .all {
-            return sampleChallenges
+            return viewModel.challenges
         } else {
-            return sampleChallenges.filter { $0.category == selectedCategory }
+            return viewModel.challenges.filter { $0.category == selectedCategory }
         }
     }
 }
@@ -111,6 +101,17 @@ struct ChallengeCard: View {
                     .background(Color.white)
                     .foregroundColor(.black)
             }
+            
+            if challenge.isStarted {
+                Text("Active Challenge")
+                    .foregroundColor(.white)
+                    .font(.subheadline)
+                    .padding(8)
+                    .background(Color.gray)
+                    .cornerRadius(8)
+                    .padding(.top, 5)
+                    .padding(.bottom, 14)
+            }
         }
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 15))
@@ -119,16 +120,23 @@ struct ChallengeCard: View {
                 .stroke(Color.white, lineWidth: 0.5)
         )
         .shadow(radius: 5)
-        .frame(height: 150)
         .padding(.horizontal)
+        .padding(.bottom, challenge.isStarted ? 16 : 8) // Add space below if active
     }
 }
 
+
 struct ChallengeDetailView: View {
-    let challenge: ChallengeModel
-    @Binding var showModal: Bool
+    @Environment(\.presentationMode) var presentationMode
+    @State private var challenge: ChallengeModel
     @State private var showCongratulations = false
-    
+    var onChallengeUpdated: (ChallengeModel) -> Void
+
+    init(challenge: ChallengeModel, onChallengeUpdated: @escaping (ChallengeModel) -> Void) {
+        _challenge = State(initialValue: challenge)
+        self.onChallengeUpdated = onChallengeUpdated
+    }
+
     var body: some View {
         VStack(spacing: 20) {
             ScrollView {
@@ -172,22 +180,28 @@ struct ChallengeDetailView: View {
             }
             
             Button(action: {
+                challenge.isStarted = true
+                onChallengeUpdated(challenge)
                 showCongratulations = true
             }) {
-                Text("Start My Eco Adventure!")
+                Text(challenge.isStarted ? "Active Challenge" : "Start My Eco Adventure!")
                     .font(.headline)
                     .foregroundColor(.white)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.green)
+                    .background(challenge.isStarted ? Color.gray : Color.green)
                     .cornerRadius(10)
             }
+            .disabled(challenge.isStarted)
             .padding(.horizontal)
-            .padding(.bottom, 85)
+            .padding(.bottom, 20)
         }
+        .padding(.bottom, 65) 
         .background(Color.white)
         .sheet(isPresented: $showCongratulations) {
-            CongratulationsView(challengeTitle: challenge.title, showModal: $showModal)
+            CongratulationsView(challengeTitle: challenge.title) {
+                presentationMode.wrappedValue.dismiss()
+            }
         }
         .ignoresSafeArea()
     }
@@ -212,7 +226,7 @@ struct ChallengeDetailView: View {
 
 struct CongratulationsView: View {
     let challengeTitle: String
-    @Binding var showModal: Bool
+    let onDismiss: () -> Void
     
     var body: some View {
         VStack(spacing: 20) {
@@ -234,9 +248,7 @@ struct CongratulationsView: View {
                 .multilineTextAlignment(.center)
                 .padding()
             
-            Button(action: {
-                showModal = false
-            }) {
+            Button(action: onDismiss) {
                 Text("Back to Challenges")
                     .font(.headline)
                     .foregroundColor(.white)
@@ -251,6 +263,8 @@ struct CongratulationsView: View {
         .background(Color.white)
     }
 }
+
+// ... (rest of the code remains the same)
 
 extension Color {
     static var random: Color {
@@ -271,7 +285,7 @@ enum ChallengeCategory: String, CaseIterable {
     case nature = "Nature"
 }
 
-let sampleChallenges = [
+var sampleChallenges = [
     ChallengeModel(
         imageName: "reusablebags",
         title: "Use Reusable Bags",
@@ -355,4 +369,12 @@ struct ChallengeModel: Identifiable {
     let description: String
     let benefits: String
     let kidChallenge: String
+    var isStarted: Bool = false // New property
+}
+
+struct ChallengesView_Previews: PreviewProvider {
+    static var previews: some View {
+        ChallengesView()
+            .environmentObject(ChallengesViewModel())
+    }
 }

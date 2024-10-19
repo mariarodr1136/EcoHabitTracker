@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var challengesViewModel = ChallengesViewModel()
+    
     var body: some View {
         TabView {
             // Home Tab
@@ -31,28 +33,13 @@ struct ContentView: View {
                     Text("Tips")
                 }
         }
-    }
-}
-
-// Sample Views for each tab
-struct HomeView: View {
-    var body: some View {
-        Text("Welcome to EcoHabit Tracker")
-            .font(.largeTitle)
-            .padding()
-    }
-}
-
-struct TipsView: View {
-    var body: some View {
-        Text("Sustainable Tips")
-            .font(.largeTitle)
-            .padding()
+        .environmentObject(challengesViewModel)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(ChallengesViewModel())
     }
 }
