@@ -9,6 +9,7 @@
 import SwiftUI
 
 class ChallengesViewModel: ObservableObject {
+    @Published var points: Int = 0
     @Published var challenges: [ChallengeModel] = sampleChallenges
     
     func startChallenge(_ challenge: ChallengeModel) {

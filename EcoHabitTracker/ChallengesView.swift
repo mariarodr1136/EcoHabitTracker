@@ -17,7 +17,6 @@ struct ChallengesView: View {
     var body: some View {
         NavigationView {
             VStack {
-                // Category selection
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 16) {
                         ForEach(ChallengeCategory.allCases, id: \.self) { category in
@@ -103,7 +102,7 @@ struct ChallengeCard: View {
             }
             
             if challenge.isStarted {
-                Text("Active Challenge")
+                Text("Challenge Completed")
                     .foregroundColor(.white)
                     .font(.subheadline)
                     .padding(8)
@@ -184,7 +183,7 @@ struct ChallengeDetailView: View {
                 onChallengeUpdated(challenge)
                 showCongratulations = true
             }) {
-                Text(challenge.isStarted ? "Active Challenge" : "Start My Eco Adventure!")
+                Text(challenge.isStarted ? "Challenge Completed" : "Complete Challenge!")
                     .font(.headline)
                     .foregroundColor(.white)
                     .padding()
@@ -238,10 +237,10 @@ struct CongratulationsView: View {
                 .font(.largeTitle)
                 .bold()
             
-            Text("You've started your eco adventure with the \(challengeTitle) challenge!")
+            Text("You've completed your eco adventure with the \(challengeTitle) challenge!")
                 .font(.title2)
                 .multilineTextAlignment(.center)
-                .padding()
+
             
             Text("Remember, every small action counts. You're making a difference!")
                 .font(.body)
@@ -254,7 +253,7 @@ struct CongratulationsView: View {
                     .foregroundColor(.white)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.green)
+                    .background(Color.blue)
                     .cornerRadius(10)
             }
             .padding(.horizontal)
