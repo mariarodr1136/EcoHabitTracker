@@ -59,7 +59,7 @@ struct HomeView: View {
                         .padding()
                 }
 
-                Text("Tip of the Day:")
+                Text("Thoughtful Tip:")
                     .font(.title2)
                     .padding(.top, 10)
                 

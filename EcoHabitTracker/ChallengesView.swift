@@ -247,6 +247,17 @@ struct CongratulationsView: View {
                 .multilineTextAlignment(.center)
                 .padding()
             
+            Image(systemName: "gift.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 30, height: 30)
+
+            // Points gained text
+            Text("You've gained +50 points")
+                .font(.footnote)
+                .foregroundColor(.black)
+                .multilineTextAlignment(.center)
+            
             Button(action: onDismiss) {
                 Text("Back to Challenges")
                     .font(.headline)
@@ -368,7 +379,7 @@ struct ChallengeModel: Identifiable {
     let description: String
     let benefits: String
     let kidChallenge: String
-    var isStarted: Bool = false // New property
+    var isStarted: Bool = false 
 }
 
 struct ChallengesView_Previews: PreviewProvider {
