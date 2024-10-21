@@ -103,13 +103,10 @@ struct ChallengeCard: View {
             
             if challenge.isStarted {
                 Text("Challenge Completed")
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                     .font(.subheadline)
-                    .padding(8)
-                    .background(Color.gray)
-                    .cornerRadius(8)
-                    .padding(.top, 5)
-                    .padding(.bottom, 14)
+                    .padding(.top, 6)
+                    .padding(.bottom, 6)
             }
         }
         .background(Color.white)
@@ -120,9 +117,12 @@ struct ChallengeCard: View {
         )
         .shadow(radius: 5)
         .padding(.horizontal)
-        .padding(.bottom, challenge.isStarted ? 16 : 8) // Add space below if active
+        .padding(.bottom, challenge.isStarted ? 9 : 8)
+        .opacity(challenge.isStarted ? 0.5 : 1)
+        .foregroundColor(challenge.isStarted ? .gray : .black)
     }
 }
+
 
 
 struct ChallengeDetailView: View {

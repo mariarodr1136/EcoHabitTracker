@@ -26,11 +26,11 @@ struct ContentView: View {
                     Text("Challenges")
                 }
 
-            // Tips Tab
-            TipsView()
+            // Rewards Tab
+            RewardsView()
                 .tabItem {
-                    Image(systemName: "lightbulb.fill")
-                    Text("Tips")
+                    Image(systemName: "trophy.fill")
+                    Text("Rewards")
                 }
         }
         .environmentObject(challengesViewModel)
