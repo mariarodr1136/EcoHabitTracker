@@ -30,12 +30,35 @@ struct HomeView: View {
                     .font(.title).bold()
                     .padding(.top, 18)
 
-                Text("Your Points: \(viewModel.points)")
-                    .font(.title3)
-                    .padding(.top, 10)
+                
+                VStack {
+                    Image("recycle")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 200)
+
+                    Text("Be an eco-friendly hero! Take on a challenge today, build sustainable habits, and help save the earth!")
+                        .font(.body)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                        .padding(.horizontal)
+                }
+                .padding()
+                .background(Color.white) // Background color for the VStack
+                .cornerRadius(15) // Rounded corners
+                .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 5) // Shadow for depth effect
+                .overlay(
+                    RoundedRectangle(cornerRadius: 15)
+                        .stroke(Color.green, lineWidth: 1)
+                )
+                .padding(.top, 20)
 
                 Text("Completed Challenges:")
-                    .font(.title2)
+                    .font(.title)
+                    .padding(.top, 40)
+                
+                Text("Your Points: \(viewModel.points)")
+                    .font(.callout)
                     .padding(.top, 10)
 
                 if !viewModel.activeChallenges.isEmpty {
@@ -59,9 +82,9 @@ struct HomeView: View {
                         .padding()
                 }
 
+                // Thoughtful Tip Section
                 Text("Thoughtful Tip:")
-                    .font(.title2)
-                    .padding(.top, 10)
+                    .font(.system(size: 20))
                 
                 Text(randomTip)
                     .font(.body)
@@ -69,6 +92,28 @@ struct HomeView: View {
                     .background(Color.green.opacity(0.1))
                     .cornerRadius(10)
                     .padding(.horizontal)
+
+                VStack {
+                    Image("earthSmile")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 200)
+
+                    Text("Every little action counts! Whether it’s turning off lights, using less water, or recycling, you can make a difference. Together, we can keep the Earth healthy and happy. Let’s be eco-heroes!")
+                        .font(.body)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                        .padding(.horizontal)
+                }
+                .padding()
+                .background(Color.white) // Background color for the VStack
+                .cornerRadius(15) // Rounded corners
+                .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 5) // Shadow for depth effect
+                .overlay(
+                    RoundedRectangle(cornerRadius: 15)
+                        .stroke(Color.green, lineWidth: 1)
+                )
+                .padding(.top, 20)
             }
             .padding(.horizontal)
         }
