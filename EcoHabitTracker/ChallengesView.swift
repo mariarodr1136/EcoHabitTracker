@@ -130,12 +130,12 @@ struct ChallengeDetailView: View {
     @State private var challenge: ChallengeModel
     @State private var showCongratulations = false
     var onChallengeUpdated: (ChallengeModel) -> Void
-
+    
     init(challenge: ChallengeModel, onChallengeUpdated: @escaping (ChallengeModel) -> Void) {
         _challenge = State(initialValue: challenge)
         self.onChallengeUpdated = onChallengeUpdated
     }
-
+    
     var body: some View {
         VStack(spacing: 20) {
             ScrollView {
@@ -195,7 +195,7 @@ struct ChallengeDetailView: View {
             .padding(.horizontal)
             .padding(.bottom, 20)
         }
-        .padding(.bottom, 65) 
+        .padding(.bottom, 65)
         .background(Color.white)
         .sheet(isPresented: $showCongratulations) {
             CongratulationsView(challengeTitle: challenge.title) {
@@ -209,16 +209,22 @@ struct ChallengeDetailView: View {
         switch challenge.category {
         case .water:
             return Image(systemName: "drop.fill")
+                .foregroundColor(.blue)
         case .energy:
             return Image(systemName: "bolt.fill")
+                .foregroundColor(.yellow)
         case .recycling:
             return Image(systemName: "arrow.3.trianglepath")
+                .foregroundColor(.green)
         case .transportation:
             return Image(systemName: "car.fill")
+                .foregroundColor(.red)
         case .nature:
             return Image(systemName: "leaf.fill")
+                .foregroundColor(.green)
         case .all:
             return Image(systemName: "globe.americas.fill")
+                .foregroundColor(.gray)
         }
     }
 }
@@ -297,15 +303,6 @@ enum ChallengeCategory: String, CaseIterable {
 
 var sampleChallenges = [
     ChallengeModel(
-        imageName: "reusablebags",
-        title: "Use Reusable Bags",
-        isSystemImage: false,
-        category: .recycling,
-        description: "Plastic bags can harm animals and pollute our oceans. By using reusable bags, we can help keep our planet clean and safe for all creatures!",
-        benefits: "Using reusable bags reduces plastic waste, saves energy, and protects wildlife. It's a simple way to make a big difference!",
-        kidChallenge: "For one week, remember to bring your own reusable bag whenever you go shopping with your family. Count how many times you use it!"
-    ),
-    ChallengeModel(
         imageName: "conservewater",
         title: "Water Wizard",
         isSystemImage: false,
@@ -315,13 +312,13 @@ var sampleChallenges = [
         kidChallenge: "This week, try to take shorter showers. Set a timer for 5 minutes and see if you can finish before it goes off!"
     ),
     ChallengeModel(
-        imageName: "gosolar",
-        title: "Solar Explorer",
+        imageName: "reusablebags",
+        title: "Use Reusable Bags",
         isSystemImage: false,
-        category: .energy,
-        description: "The sun gives us free, clean energy! Learning about solar power helps us understand how we can use this amazing resource.",
-        benefits: "Solar energy is clean, renewable, and doesn't produce harmful gases. It helps fight climate change and can be used almost anywhere!",
-        kidChallenge: "Build a simple solar oven using a pizza box and aluminum foil. Try to melt a marshmallow in it on a sunny day!"
+        category: .recycling,
+        description: "Plastic bags can harm animals and pollute our oceans. By using reusable bags, we can help keep our planet clean and safe for all creatures!",
+        benefits: "Using reusable bags reduces plastic waste, saves energy, and protects wildlife. It's a simple way to make a big difference!",
+        kidChallenge: "For one week, remember to bring your own reusable bag whenever you go shopping with your family. Count how many times you use it!"
     ),
     ChallengeModel(
         imageName: "saveelectricity",
@@ -367,8 +364,106 @@ var sampleChallenges = [
         description: "Single-use plastics can harm animals and pollute our environment. By avoiding them, we can help keep our planet clean and safe!",
         benefits: "Reducing plastic use helps protect marine life, reduces pollution in oceans and landfills, and saves energy used to produce plastics.",
         kidChallenge: "For one week, try to avoid using single-use plastics like straws or plastic water bottles. Keep a tally of how many times you say 'No thanks!' to plastic."
-    )
-]
+    ),
+    ChallengeModel(
+        imageName: "gosolar",
+        title: "Solar Explorer",
+        isSystemImage: false,
+        category: .energy,
+        description: "The sun gives us free, clean energy! Learning about solar power helps us understand how we can use this amazing resource.",
+        benefits: "Solar energy is clean, renewable, and doesn't produce harmful gases. It helps fight climate change and can be used almost anywhere!",
+        kidChallenge: "Build a simple solar oven using a pizza box and aluminum foil. Try to melt a marshmallow in it on a sunny day!"
+    ),
+    ChallengeModel(
+            imageName: "turnofftaps",
+            title: "Tap Tamer",
+            isSystemImage: false,
+            category: .water,
+            description: "Every drop of water counts! By turning off the tap when brushing your teeth, you can save a lot of water.",
+            benefits: "Turning off the tap helps conserve water and saves energy, ensuring that there’s plenty of clean water for everyone.",
+            kidChallenge: "For this week, remember to turn off the tap while brushing your teeth. Count how many times you remember to do it!"
+        ),
+        
+        ChallengeModel(
+            imageName: "bikeadventures",
+            title: "Biking Buddy",
+            isSystemImage: false,
+            category: .transportation,
+            description: "Biking is not only fun, but it's also a great way to help the environment by reducing pollution!",
+            benefits: "Biking instead of driving helps reduce carbon emissions, keeps our air clean, and is a healthy way to get around.",
+            kidChallenge: "Plan a bike ride with your family or friends this weekend. Count how many miles you ride together!"
+        ),
+
+        ChallengeModel(
+            imageName: "plantflowers",
+            title: "Flower Friend",
+            isSystemImage: false,
+            category: .nature,
+            description: "Flowers make the world beautiful and provide food for bees and butterflies! Let's grow more flowers.",
+            benefits: "Planting flowers supports local wildlife, improves air quality, and beautifies our neighborhoods.",
+            kidChallenge: "Choose a spot in your garden or a pot and plant some flower seeds. Keep track of how many flowers bloom!"
+        ),
+
+        ChallengeModel(
+            imageName: "showerparty",
+            title: "Shower Star",
+            isSystemImage: false,
+            category: .water,
+            description: "Taking shorter showers saves water, which is essential for our planet's health.",
+            benefits: "Using less water in the shower conserves this vital resource and reduces energy consumption.",
+            kidChallenge: "Set a timer for 4 minutes and try to finish your shower before it goes off for the next week. Track how often you succeed!"
+        ),
+
+        ChallengeModel(
+            imageName: "turnofflights",
+            title: "Light Saver",
+            isSystemImage: false,
+            category: .energy,
+            description: "Turning off lights when you leave a room helps save energy and reduces electricity bills!",
+            benefits: "By using less electricity, we can help reduce pollution and conserve valuable resources for our planet.",
+            kidChallenge: "Make a game out of it! For a week, try to turn off lights whenever you leave a room and count how many times you remember!"
+        ),
+        
+    ChallengeModel(
+        imageName: "veggiegarden",
+        title: "Garden Guardian",
+        isSystemImage: false,
+        category: .nature,
+        description: "Growing your own vegetables is a fun way to learn about where food comes from and how to care for the Earth.",
+        benefits: "Home gardening reduces the need for store-bought produce, saving packaging and transportation energy.",
+        kidChallenge: "Plant some vegetable seeds in a garden or pot. Water them daily and keep track of their growth over the next month!"
+    ),
+
+        ChallengeModel(
+            imageName: "ecoart",
+            title: "Eco Artist",
+            isSystemImage: false,
+            category: .recycling,
+            description: "You can create beautiful art using recycled materials! It's a fun way to express yourself while helping the planet.",
+            benefits: "Recycling materials for art reduces waste and encourages creativity. It's a win-win for you and the Earth!",
+            kidChallenge: "Gather old newspapers, cardboard, or plastic bottles and create a piece of art. Share your creation with friends and family!"
+        ),
+
+        ChallengeModel(
+            imageName: "naturewalk",
+            title: "Nature Explorer",
+            isSystemImage: false,
+            category: .nature,
+            description: "Exploring nature helps us appreciate the beauty of the Earth and understand how to protect it.",
+            benefits: "Spending time in nature promotes physical health, boosts mood, and fosters a connection with the environment.",
+            kidChallenge: "Go for a nature walk with your family and identify at least 5 different plants or animals you see. Create a mini nature journal!"
+        ),
+
+        ChallengeModel(
+            imageName: "homemadecompost",
+            title: "Compost Champion",
+            isSystemImage: false,
+            category: .recycling,
+            description: "Composting helps reduce waste and creates rich soil for plants! It's a great way to recycle food scraps.",
+            benefits: "Composting cuts down on landfill waste, reduces greenhouse gas emissions, and enriches soil for gardening.",
+            kidChallenge: "Start a small compost bin at home with fruit peels and vegetable scraps. Track how quickly your compost pile grows!"
+        )
+    ]
 
 struct ChallengeModel: Identifiable {
     let id = UUID()
