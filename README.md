@@ -29,7 +29,7 @@ The app is built using Swift and SwiftUI. It consists of several key components:
 
 **Installation:**
 
-1. Clone the repository: git clone https://github.com/yourusername/EcoHabitTracker
+1. Clone the repository: git clone https://github.com/mariarodr1136/EcoHabitTracker.git
 2. Open the project in Xcode.
 3. Run the app on the simulator or on a physical iOS device.
 
