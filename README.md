@@ -2,11 +2,12 @@
 
 EcoHabit Tracker is an engaging iOS app designed to help kids develop sustainable habits in a fun and interactive way. Through gamification, challenges, and educational tips, kids can learn how their actions can positively impact the environment and become eco-heroes!
 
-Purpose:
+**Purpose:**
+
 
 EcoHabit Tracker aims to make sustainable living exciting for kids by motivating them to adopt eco-friendly habits such as reducing plastic use, saving water, and eating plant-based meals. By completing challenges, earning points, and learning fun facts, kids can see the impact of their actions and inspire others to do the same.
 
-Features:
+**Features:**
 
 - Gamification: Earn points for completing challenges and building eco-friendly habits.
 - Challenges: Take on sustainability challenges that promote eco-friendly behaviors.
@@ -17,7 +18,7 @@ Features:
 
 ![EcoHabits Tracker](https://github.com/user-attachments/assets/156bd8db-4d8c-4fa1-a1ae-4312ea9cec6e)
 
-Code Structure:
+**Code Structure:**
 
 The app is built using Swift and SwiftUI. It consists of several key components:
 
@@ -26,13 +27,13 @@ The app is built using Swift and SwiftUI. It consists of several key components:
 - RewardsView: Displays the rewards system where users can see the medals they’ve earned and how many points they need for the next level.
 
 
-Installation:
+**Installation:**
 
 1. Clone the repository: git clone https://github.com/yourusername/EcoHabitTracker
 2. Open the project in Xcode.
 3. Run the app on the simulator or on a physical iOS device.
 
-Requirements
+**Requirements**
 
 - Xcode 12.0 or later
 - iOS 14.0 or later
