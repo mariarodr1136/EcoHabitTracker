@@ -25,12 +25,13 @@ The app is built using Swift and SwiftUI. It consists of several key components:
 - **ChallengesView**: Allows users to browse, filter, and start eco-friendly challenges, tracking their progress along the way.
 - **RewardsView**: Displays the rewards system where users can see the medals they’ve earned and how many points they need for the next level.
 
-
 ## Installation:
 
-1. Clone the repository: git clone https://github.com/mariarodr1136/EcoHabitTracker.git
-2. Open the project in Xcode.
-3. Run the app on the simulator or on a physical iOS device.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mariarodr1136/EcoHabitTracker.git
+3. Open the project in Xcode.
+4. Run the app on the simulator or on a physical iOS device.
 
 ## Requirements
 
