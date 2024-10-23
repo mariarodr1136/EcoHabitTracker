@@ -10,27 +10,25 @@ struct RewardsView: View {
                 .scaledToFit()
                 .foregroundColor(.yellow)
                 .frame(width: 40, height: 40)
+                .padding(.top, 30)
 
             Text("Your Rewards")
                 .font(.largeTitle)
                 .bold()
 
-            // Medal System - Image that changes color based on points
             Image(systemName: "medal.fill")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 60, height: 60)
                 .foregroundColor(getMedalColor(for: viewModel.points)) 
-                .padding(.top, 20)
+                .padding(.top, 10)
             
             Text((currentMedalColor()))
                 .font(.headline)
                 .padding(.top, 5)
 
-            // Wrapping the points and info in one VStack
             VStack {
 
-                // Text showing how many points are needed for the next medal
                 Text(pointsToNextMedal())
                     .font(.footnote)
                     .foregroundColor(.gray)
@@ -39,7 +37,7 @@ struct RewardsView: View {
                 VStack(alignment: .center, spacing: 10) {
                     Text("How to Earn Points:")
                         .font(.headline)
-                        .padding(.top, 30)
+                        .padding(.top, 20)
 
                     Text("• Complete challenges")
                     Text("• Build sustainable habits")
@@ -66,9 +64,8 @@ struct RewardsView: View {
                     .font(.headline)
                 
             }
-            .padding(.top, 30)
-            .padding(.bottom, 30)
-
+            .padding(.top, 20)
+            .padding(.bottom, 20)
 
             VStack {
                 Image(systemName: "leaf.fill")
@@ -96,10 +93,9 @@ struct RewardsView: View {
                     .stroke(Color.green, lineWidth: 1)
             )
             .padding(.horizontal, 30)
-
             Spacer()
         }
-        .padding(.top, 30)
+        .padding(.top, 20)
         .padding(.bottom, 40)
     }
 

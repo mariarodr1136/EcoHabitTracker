@@ -1,11 +1,3 @@
-//
-//  ChallengesViewModel.swift
-//  EcoHabitTracker
-//
-//  Created by Maria Rodriguez on 10/19/24.
-//
-
-
 import SwiftUI
 import Combine
 
@@ -23,8 +15,6 @@ class ChallengesViewModel: ObservableObject {
                 points += 50 // Add points when a challenge is completed
             }
         }
-        
-        // Update the activeChallenges property
         activeChallenges = challenges.filter { $0.isStarted }
     }
 }

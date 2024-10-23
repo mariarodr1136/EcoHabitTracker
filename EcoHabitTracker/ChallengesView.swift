@@ -1,11 +1,3 @@
-//
-//
-//  ChallengesView.swift
-//  EcoHabitTracker
-//
-//  Created by Maria Rodriguez on 10/18/24.
-//
-
 import SwiftUI
 
 struct ChallengesView: View {
@@ -122,8 +114,6 @@ struct ChallengeCard: View {
         .foregroundColor(challenge.isStarted ? .gray : .black)
     }
 }
-
-
 
 struct ChallengeDetailView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -280,8 +270,6 @@ struct CongratulationsView: View {
     }
 }
 
-// ... (rest of the code remains the same)
-
 extension Color {
     static var random: Color {
         return Color(
@@ -383,7 +371,6 @@ var sampleChallenges = [
             benefits: "Turning off the tap helps conserve water and saves energy, ensuring that there’s plenty of clean water for everyone.",
             kidChallenge: "For this week, remember to turn off the tap while brushing your teeth. Count how many times you remember to do it!"
         ),
-        
         ChallengeModel(
             imageName: "bikeadventures",
             title: "Biking Buddy",
@@ -393,7 +380,6 @@ var sampleChallenges = [
             benefits: "Biking instead of driving helps reduce carbon emissions, keeps our air clean, and is a healthy way to get around.",
             kidChallenge: "Plan a bike ride with your family or friends this weekend. Count how many miles you ride together!"
         ),
-
         ChallengeModel(
             imageName: "plantflowers",
             title: "Flower Friend",
@@ -403,7 +389,6 @@ var sampleChallenges = [
             benefits: "Planting flowers supports local wildlife, improves air quality, and beautifies our neighborhoods.",
             kidChallenge: "Choose a spot in your garden or a pot and plant some flower seeds. Keep track of how many flowers bloom!"
         ),
-
         ChallengeModel(
             imageName: "showerparty",
             title: "Shower Star",
@@ -423,7 +408,6 @@ var sampleChallenges = [
             benefits: "By using less electricity, we can help reduce pollution and conserve valuable resources for our planet.",
             kidChallenge: "Make a game out of it! For a week, try to turn off lights whenever you leave a room and count how many times you remember!"
         ),
-        
     ChallengeModel(
         imageName: "veggiegarden",
         title: "Garden Guardian",
@@ -433,7 +417,6 @@ var sampleChallenges = [
         benefits: "Home gardening reduces the need for store-bought produce, saving packaging and transportation energy.",
         kidChallenge: "Plant some vegetable seeds in a garden or pot. Water them daily and keep track of their growth over the next month!"
     ),
-
         ChallengeModel(
             imageName: "ecoart",
             title: "Eco Artist",
@@ -443,7 +426,6 @@ var sampleChallenges = [
             benefits: "Recycling materials for art reduces waste and encourages creativity. It's a win-win for you and the Earth!",
             kidChallenge: "Gather old newspapers, cardboard, or plastic bottles and create a piece of art. Share your creation with friends and family!"
         ),
-
         ChallengeModel(
             imageName: "naturewalk",
             title: "Nature Explorer",
@@ -453,7 +435,6 @@ var sampleChallenges = [
             benefits: "Spending time in nature promotes physical health, boosts mood, and fosters a connection with the environment.",
             kidChallenge: "Go for a nature walk with your family and identify at least 5 different plants or animals you see. Create a mini nature journal!"
         ),
-
         ChallengeModel(
             imageName: "homemadecompost",
             title: "Compost Champion",

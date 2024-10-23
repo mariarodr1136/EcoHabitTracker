@@ -31,7 +31,6 @@ struct HomeView: View {
         "If everyone picked up just one piece of trash every day, imagine how clean our neighborhoods and parks would be!"
     ]
 
-    
     var randomTip: String {
         tips.randomElement() ?? "Stay eco-friendly!"
     }
