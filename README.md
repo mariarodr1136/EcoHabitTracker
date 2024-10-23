@@ -39,6 +39,6 @@ The app is built using Swift and SwiftUI. It consists of several key components:
 - iOS 14.0 or later
 - Swift 5.3 or later
 
-Contributing: 
+**Contributing:** 
 
 Feel free to submit issues or pull requests for improvements or bug fixes. All contributions are welcome to enhance the app’s features or functionality!
