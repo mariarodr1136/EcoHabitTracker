@@ -52,6 +52,24 @@ The app is built using Swift and SwiftUI. It consists of several key components:
 
 Feel free to submit issues or pull requests for improvements or bug fixes. All contributions are welcome to enhance the app’s features or functionality!
 
+To contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix:
+   ```bash
+   git checkout -b feat/your-feature-name
+- Alternatively, for bug fixes:
+   ```bash
+   git checkout -b fix/your-bug-fix-name
+3. Make your changes and run all tests before committing the changes and make sure all tests are passed.
+4. After all tests are passed, commit your changes with descriptive messages:
+   ```bash
+   git commit -m 'add your commit message'
+5. Push your changes to your forked repository:
+   ```bash
+   git push origin feat/your-feature-name.
+6. Submit a pull request to the main repository, explaining your changes and providing any necessary details.
+
 ## Contact
 
 If you have any questions or feedback, feel free to reach out at [mrodr.contact@gmail.com](mailto:mrodr.contact@gmail.com).
