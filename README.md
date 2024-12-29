@@ -24,7 +24,7 @@ EcoHabit Tracker aims to make sustainable living exciting for kids by motivating
 - **Impact Tracker**: Track your progress and see the environmental impact of your actions.
 - **Rewards**: Unlock medals (Bronze, Silver, Gold, and Platinum) based on earned points.
 - **Educational Tips**: Receive daily tips and fun facts about sustainability.
-- **Motivation**: The app is designed to make learning about sustainability exciting and fun, helping kids feel like they are making a difference.
+- **AI Assistant**: Integrated a conversational AI assistant powered by the Hugging Face API to provide personalized guidance, answer queries related to environmental impact, and motivate users with inspiring messages.
 
 ---
 
@@ -39,6 +39,17 @@ The app is built using Swift and SwiftUI. It consists of several key components:
 - **HomeView**: The main interface where users can view challenges, receive tips, and track progress.
 - **ChallengesView**: Allows users to browse, filter, and start eco-friendly challenges, tracking their progress along the way.
 - **RewardsView**: Displays the rewards system where users can see the medals they’ve earned and how many points they need for the next level.
+- **AIIntegration**: Leverages the Hugging Face API to integrate a conversational assistant that enhances user interaction.
+
+---
+
+<div align="center">
+   <h3>AI Assistant Update</h3>
+  <img src="https://github.com/user-attachments/assets/e7fa97c0-39f2-4fd7-b3cd-205287a242e6" alt="EcoHabit Tracker" width="300">
+</div>
+
+---
+
 
 ## Installation:
 
