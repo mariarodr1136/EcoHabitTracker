@@ -39,7 +39,7 @@ The app is built using Swift and SwiftUI. It consists of several key components:
 - **HomeView**: The main interface where users can view challenges, receive tips, and track progress.
 - **ChallengesView**: Allows users to browse, filter, and start eco-friendly challenges, tracking their progress along the way.
 - **RewardsView**: Displays the rewards system where users can see the medals they’ve earned and how many points they need for the next level.
-- **AIIntegration**: Leverages the Hugging Face API to integrate a conversational assistant that enhances user interaction.
+- **AI Integration**: Leverages the Hugging Face API to integrate a conversational assistant that enhances user interaction.
 
 ---
 
