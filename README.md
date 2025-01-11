@@ -1,8 +1,12 @@
 # EcoHabit Tracker ♻️🦸‍♀️
 
-EcoHabit Tracker is an engaging iOS app designed to help kids develop sustainable habits in a fun and interactive way. Through gamification, challenges, and educational tips, kids can learn how their actions can positively impact the environment and become eco-heroes! 
+EcoHabit Tracker is an engaging iOS app designed to inspire and empower kids to adopt sustainable habits in a fun, interactive, and educational way. By leveraging gamification, engaging challenges, and bite-sized educational tips, this app teaches kids the importance of making eco-friendly choices in their daily lives.
 
-![Swift](https://img.shields.io/badge/Swift-Swift-orange) ![SwiftUI](https://img.shields.io/badge/SwiftUI-SwiftUI-blue) ![Xcode](https://img.shields.io/badge/Xcode-Xcode-lightblue)
+Through completing exciting sustainability challenges, tracking their progress, and earning rewards, kids learn how their small actions—such as reducing plastic use, conserving water, and adopting energy-saving habits—can collectively make a big difference for the environment.
+
+The app also features an AI-powered assistant, offering personalized guidance, answering environmental questions, and motivating kids with encouraging messages. This combination of education, technology, and gamification helps foster a generation of eco-heroes who feel equipped and motivated to lead a greener future while having fun along the way.
+
+![Swift](https://img.shields.io/badge/Language-Swift-orange) ![SwiftUI](https://img.shields.io/badge/Framework-SwiftUI-blue) ![Xcode](https://img.shields.io/badge/IDE-Xcode-lightblue) ![Hugging Face](https://img.shields.io/badge/Library-Hugging_Face-purple)
 
 ## Table of Contents
 - [Purpose](#purpose)
@@ -57,7 +61,20 @@ The app is built using Swift and SwiftUI. It consists of several key components:
    ```bash
    git clone https://github.com/mariarodr1136/EcoHabitTracker.git
 2. Open the project in Xcode.
-3. Run the app on the simulator or on a physical iOS device.
+3. **Important Step**: Obtain an API key from Hugging Face to ensure the app works as expected. Follow these steps to get your token:
+
+- Visit [Hugging Face](https://huggingface.co) and sign up for a free account if you don’t already have one.
+- Log in, and go to Settings by clicking your profile picture in the top-right corner.
+- Select Access Tokens and click New Token.
+- Name your token (e.g., “EcoHabitTracker”) and click Generate Token.
+- Copy the generated token.
+
+- Open the ChatMessage class file and navigate to line 23. Update the following line by pasting your token:
+
+   ```bash
+   private let apiToken = "your_generated_token_here"
+
+4. Run the app on the simulator or on a physical iOS device.
 
 ## Requirements
 
