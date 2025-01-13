@@ -20,7 +20,7 @@ class ChatViewModel: ObservableObject {
     @Published var isLoading = false
     
     // Hugging Face API token
-    private let apiToken =
+    private let apiToken = "your_api_token_here"
     private let modelID = "facebook/blenderbot-400M-distill"
     
     init() {
