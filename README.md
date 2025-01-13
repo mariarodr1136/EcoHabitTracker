@@ -1,10 +1,10 @@
 # EcoHabit Tracker ♻️🦸‍♀️
 
-EcoHabit Tracker is an engaging iOS app designed to inspire and empower kids to adopt sustainable habits in a fun, interactive, and educational way. By leveraging gamification, engaging challenges, and bite-sized educational tips, this app teaches kids the importance of making eco-friendly choices in their daily lives.
+**EcoHabit Tracker** is an engaging **iOS app** designed to inspire and empower kids to adopt **sustainable habits** in a fun, interactive, and educational way. By leveraging **gamification**, engaging challenges, and bite-sized educational tips, this app teaches kids the importance of making **eco-friendly choices** in their daily lives.
 
-Through completing exciting sustainability challenges, tracking their progress, and earning rewards, kids learn how their small actions—such as reducing plastic use, conserving water, and adopting energy-saving habits—can collectively make a big difference for the environment.
+Through completing exciting **sustainability challenges**, tracking their progress, and earning rewards, kids learn how their small actions—such as reducing plastic use, conserving water, and adopting **energy-saving habits**—can collectively make a big difference for the environment.
 
-The app also features an AI-powered assistant, offering personalized guidance, answering environmental questions, and motivating kids with encouraging messages. This combination of education, technology, and gamification helps foster a generation of eco-heroes who feel equipped and motivated to lead a greener future while having fun along the way.
+The app also features an **AI-powered assistant**, offering **personalized guidance**, answering environmental questions, and motivating kids with encouraging messages. This combination of **education**, **technology**, and **gamification** helps foster a generation of **eco-heroes** who feel equipped and motivated to lead a greener future while having fun along the way.
 
 ![Swift](https://img.shields.io/badge/Language-Swift-orange) ![SwiftUI](https://img.shields.io/badge/Framework-SwiftUI-blue) ![Xcode](https://img.shields.io/badge/IDE-Xcode-lightblue) ![Hugging Face](https://img.shields.io/badge/Library-Hugging_Face-purple)
 
@@ -79,7 +79,7 @@ The app is built using Swift and SwiftUI. It consists of several key components:
 ## Requirements
 
 - macOS Sonoma or later
-- Xcode 12.0 or later
+- Xcode 16.2 or later
 - iOS 14.0 or later
 - Swift 5.3 or later
 
