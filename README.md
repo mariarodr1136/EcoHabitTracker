@@ -78,9 +78,11 @@ The app is built using Swift and SwiftUI. It consists of several key components:
 
 ## Requirements
 
+- macOS Sonoma or later
 - Xcode 12.0 or later
 - iOS 14.0 or later
 - Swift 5.3 or later
+
 
 ## Contributing:
 
